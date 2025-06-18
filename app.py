@@ -17,7 +17,8 @@ mysql.init_app(app)
 
 @app.route("/")
 def main():
-    return "Welcome RAVIKIRAN!"
+    print("Home route was called")
+    return "<h1>Welcome RAVIKIRAN!</h1>"
 
 @app.route('/how are you')
 def hello():
