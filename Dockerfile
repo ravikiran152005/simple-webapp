@@ -1,8 +1,10 @@
 FROM python:3.10-slim
 
-# Install MySQL client dependencies
+# Install MySQL and build dependencies
 RUN apt-get update && apt-get install -y \
-    default-libmysqlclient-dev gcc \
+    default-libmysqlclient-dev \
+    gcc \
+    pkg-config \
     && apt-get clean
 
 WORKDIR /app

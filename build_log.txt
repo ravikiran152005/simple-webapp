@@ -1,0 +1,131 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 314B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.10-slim
+#2 DONE 1.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/5] FROM docker.io/library/python:3.10-slim@sha256:034724ef64585eeb0e82385e9aabcbeabfe5f7cae2c2dcedb1da95114372b6d7
+#4 resolve docker.io/library/python:3.10-slim@sha256:034724ef64585eeb0e82385e9aabcbeabfe5f7cae2c2dcedb1da95114372b6d7 done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 4.79kB done
+#5 DONE 0.0s
+
+#6 [2/5] RUN apt-get update && apt-get install -y     default-libmysqlclient-dev gcc     && apt-get clean
+#6 CACHED
+
+#7 [3/5] WORKDIR /app
+#7 CACHED
+
+#8 [4/5] COPY . /app
+#8 DONE 0.0s
+
+#9 [5/5] RUN pip install --no-cache-dir -r requirements.txt
+#9 1.378 Collecting Flask==2.3.3
+#9 1.447   Downloading flask-2.3.3-py3-none-any.whl (96 kB)
+#9 1.464      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 96.1/96.1 kB 6.3 MB/s eta 0:00:00
+#9 1.480 Collecting flask-mysqldb==1.0.1
+#9 1.490   Downloading Flask-MySQLdb-1.0.1.tar.gz (4.3 kB)
+#9 1.493   Preparing metadata (setup.py): started
+#9 1.863   Preparing metadata (setup.py): finished with status 'done'
+#9 1.908 Collecting Werkzeug>=2.3.7
+#9 1.918   Downloading werkzeug-3.1.3-py3-none-any.whl (224 kB)
+#9 1.927      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 224.5/224.5 kB 29.4 MB/s eta 0:00:00
+#9 1.951 Collecting Jinja2>=3.1.2
+#9 1.959   Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+#9 1.964      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 57.1 MB/s eta 0:00:00
+#9 1.980 Collecting blinker>=1.6.2
+#9 1.990   Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+#9 2.013 Collecting click>=8.1.3
+#9 2.022   Downloading click-8.2.1-py3-none-any.whl (102 kB)
+#9 2.025      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 102.2/102.2 kB 97.4 MB/s eta 0:00:00
+#9 2.041 Collecting itsdangerous>=2.1.2
+#9 2.050   Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+#9 2.080 Collecting mysqlclient>=1.3.7
+#9 2.091   Downloading mysqlclient-2.2.7.tar.gz (91 kB)
+#9 2.095      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 91.4/91.4 kB 65.8 MB/s eta 0:00:00
+#9 2.106   Installing build dependencies: started
+#9 3.538   Installing build dependencies: finished with status 'done'
+#9 3.539   Getting requirements to build wheel: started
+#9 3.636   Getting requirements to build wheel: finished with status 'error'
+#9 3.640   error: subprocess-exited-with-error
+#9 3.640   
+#9 3.640   × Getting requirements to build wheel did not run successfully.
+#9 3.640   │ exit code: 1
+#9 3.640   ╰─> [30 lines of output]
+#9 3.640       /bin/sh: 1: pkg-config: not found
+#9 3.640       /bin/sh: 1: pkg-config: not found
+#9 3.640       /bin/sh: 1: pkg-config: not found
+#9 3.640       /bin/sh: 1: pkg-config: not found
+#9 3.640       Trying pkg-config --exists mysqlclient
+#9 3.640       Command 'pkg-config --exists mysqlclient' returned non-zero exit status 127.
+#9 3.640       Trying pkg-config --exists mariadb
+#9 3.640       Command 'pkg-config --exists mariadb' returned non-zero exit status 127.
+#9 3.640       Trying pkg-config --exists libmariadb
+#9 3.640       Command 'pkg-config --exists libmariadb' returned non-zero exit status 127.
+#9 3.640       Trying pkg-config --exists perconaserverclient
+#9 3.640       Command 'pkg-config --exists perconaserverclient' returned non-zero exit status 127.
+#9 3.640       Traceback (most recent call last):
+#9 3.640         File "/usr/local/lib/python3.10/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 353, in <module>
+#9 3.640           main()
+#9 3.640         File "/usr/local/lib/python3.10/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 335, in main
+#9 3.640           json_out['return_val'] = hook(**hook_input['kwargs'])
+#9 3.640         File "/usr/local/lib/python3.10/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 118, in get_requires_for_build_wheel
+#9 3.640           return hook(config_settings)
+#9 3.640         File "/tmp/pip-build-env-ulobih3k/overlay/lib/python3.10/site-packages/setuptools/build_meta.py", line 331, in get_requires_for_build_wheel
+#9 3.640           return self._get_build_requires(config_settings, requirements=[])
+#9 3.640         File "/tmp/pip-build-env-ulobih3k/overlay/lib/python3.10/site-packages/setuptools/build_meta.py", line 301, in _get_build_requires
+#9 3.640           self.run_setup()
+#9 3.640         File "/tmp/pip-build-env-ulobih3k/overlay/lib/python3.10/site-packages/setuptools/build_meta.py", line 317, in run_setup
+#9 3.640           exec(code, locals())
+#9 3.640         File "<string>", line 156, in <module>
+#9 3.640         File "<string>", line 49, in get_config_posix
+#9 3.640         File "<string>", line 28, in find_package_name
+#9 3.640       Exception: Can not find valid pkg-config name.
+#9 3.640       Specify MYSQLCLIENT_CFLAGS and MYSQLCLIENT_LDFLAGS env vars manually
+#9 3.640       [end of output]
+#9 3.640   
+#9 3.640   note: This error originates from a subprocess, and is likely not a problem with pip.
+#9 3.641 error: subprocess-exited-with-error
+#9 3.641 
+#9 3.641 × Getting requirements to build wheel did not run successfully.
+#9 3.641 │ exit code: 1
+#9 3.641 ╰─> See above for output.
+#9 3.641 
+#9 3.641 note: This error originates from a subprocess, and is likely not a problem with pip.
+#9 3.731 
+#9 3.731 [notice] A new release of pip is available: 23.0.1 -> 25.1.1
+#9 3.731 [notice] To update, run: pip install --upgrade pip
+#9 ERROR: process "/bin/sh -c pip install --no-cache-dir -r requirements.txt" did not complete successfully: exit code: 1
+------
+ > [5/5] RUN pip install --no-cache-dir -r requirements.txt:
+3.641 error: subprocess-exited-with-error
+3.641 
+3.641 × Getting requirements to build wheel did not run successfully.
+3.641 │ exit code: 1
+3.641 ╰─> See above for output.
+3.641 
+3.641 note: This error originates from a subprocess, and is likely not a problem with pip.
+3.731 
+3.731 [notice] A new release of pip is available: 23.0.1 -> 25.1.1
+3.731 [notice] To update, run: pip install --upgrade pip
+------
+Dockerfile:11
+--------------------
+   9 |     COPY . /app
+  10 |     
+  11 | >>> RUN pip install --no-cache-dir -r requirements.txt
+  12 |     
+  13 |     EXPOSE 5000
+--------------------
+ERROR: failed to solve: process "/bin/sh -c pip install --no-cache-dir -r requirements.txt" did not complete successfully: exit code: 1
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/ofuzt7qk99yjq9c2ujt3xqwnj
