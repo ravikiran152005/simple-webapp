@@ -18,9 +18,18 @@ mysql.init_app(app)
 @app.route("/")
 def main():
     print("Home route was called")
-    return "<h1>Welcome RAVIKIRAN!</h1>"
+    return """
+        <!DOCTYPE html>
+        <html>
+        <head><title>Welcome</title></head>
+        <body style='font-family:sans-serif; text-align:center; margin-top:20%;'>
+            <h1>Welcome RAVIKIRAN!</h1>
+            <p>Your Flask app is running inside Docker.</p>
+        </body>
+        </html>
+    """
 
-@app.route('/how are you')
+@app.route('/howareyou')
 def hello():
     return 'I am good, how about you?'
 
